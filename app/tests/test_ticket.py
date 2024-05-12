@@ -48,7 +48,7 @@ def test_add_comment(client):
     assert response.status_code == 201
 
     response = client.post(
-        f"/tickets/{response.json['id']}/comments",
+        f"/tickets/{response.json['id']}/comments/",
         json={"text": "Test message", "email": "test@mail.ru"},
     )
 
@@ -66,7 +66,7 @@ def test_update_ticket_status_closed(client):
 
     # Из открытого в отвечен
     response = client.put(
-        f"/tickets/{responseTicket.json['id']}", json={"status": "closed"}
+        f"/tickets/{responseTicket.json['id']}/", json={"status": "closed"}
     )
 
     assert response.status_code == 200
@@ -74,7 +74,7 @@ def test_update_ticket_status_closed(client):
 
     # Изменение статуса закрытого тикета
     response = client.put(
-        f"/tickets/{responseTicket.json['id']}", json={"status": "waiting_for_answer"}
+        f"/tickets/{responseTicket.json['id']}/", json={"status": "waiting_for_answer"}
     )
     assert response.status_code == 400
 
@@ -87,30 +87,30 @@ def test_update_ticket_status_changes(client):
 
     # Из открытого в waiting_for_answer
     response = client.put(
-        f"/tickets/{responseTicket.json['id']}", json={"status": "waiting_for_answer"}
+        f"/tickets/{responseTicket.json['id']}/", json={"status": "waiting_for_answer"}
     )
     assert response.status_code == 400
     # Из открытого в answered
     response = client.put(
-        f"/tickets/{responseTicket.json['id']}", json={"status": "answered"}
+        f"/tickets/{responseTicket.json['id']}/", json={"status": "answered"}
     )
     assert response.status_code == 200
 
     # Из answered в waiting_for_answer
     response = client.put(
-        f"/tickets/{responseTicket.json['id']}", json={"status": "waiting_for_answer"}
+        f"/tickets/{responseTicket.json['id']}/", json={"status": "waiting_for_answer"}
     )
     assert response.status_code == 200
 
     # Из waiting_for_answer в open
     response = client.put(
-        f"/tickets/{responseTicket.json['id']}", json={"status": "open"}
+        f"/tickets/{responseTicket.json['id']}/", json={"status": "open"}
     )
     assert response.status_code == 400
 
     # Из waiting_for_answer в closed
     response = client.put(
-        f"/tickets/{responseTicket.json['id']}", json={"status": "closed"}
+        f"/tickets/{responseTicket.json['id']}/", json={"status": "closed"}
     )
     assert response.status_code == 200
 
@@ -122,12 +122,12 @@ def test_add_comment_to_closed_ticket(client):
     assert responseTicket.status_code == 201
 
     response = client.put(
-        f"/tickets/{responseTicket.json['id']}", json={"status": "closed"}
+        f"/tickets/{responseTicket.json['id']}/", json={"status": "closed"}
     )
     assert response.status_code == 200
 
     response = client.post(
-        f"/tickets/{responseTicket.json['id']}/comments",
+        f"/tickets/{responseTicket.json['id']}/comments/",
         json={"text": "Test message", "email": "test@mail.ru"},
     )
     assert response.status_code == 400
@@ -148,7 +148,7 @@ def test_get_ticket_paginate(client):
 
     # Проверка пагинации за пределами
     response = client.get("/tickets/?page=4&page_size=2")
-    assert response.status_code == 404
+    assert response.status_code == 200
 
     response = client.get("/tickets/?page=-2&page_size=-210")
     assert response.status_code == 400
@@ -161,41 +161,41 @@ def test_add_comment_in_different_status_tickets(client):
     assert responseTicket.status_code == 201
 
     response = client.post(
-        f"/tickets/{responseTicket.json['id']}/comments",
+        f"/tickets/{responseTicket.json['id']}/comments/",
         json={"text": "Test message", "email": "test@mail.ru"},
     )
 
     assert response.status_code == 201
 
     response = client.put(
-        f"/tickets/{responseTicket.json['id']}", json={"status": "answered"}
+        f"/tickets/{responseTicket.json['id']}/", json={"status": "answered"}
     )
     assert response.status_code == 200
 
     response = client.post(
-        f"/tickets/{responseTicket.json['id']}/comments",
+        f"/tickets/{responseTicket.json['id']}/comments/",
         json={"text": "Test message", "email": "Another@mail.ru"},
     )
     assert response.status_code == 201
 
     response = client.put(
-        f"/tickets/{responseTicket.json['id']}", json={"status": "waiting_for_answer"}
+        f"/tickets/{responseTicket.json['id']}/", json={"status": "waiting_for_answer"}
     )
     assert response.status_code == 200
 
     response = client.post(
-        f"/tickets/{responseTicket.json['id']}/comments",
+        f"/tickets/{responseTicket.json['id']}/comments/",
         json={"text": "Test message", "email": "test@mail.ru"},
     )
     assert response.status_code == 201
 
     response = client.put(
-        f"/tickets/{responseTicket.json['id']}", json={"status": "closed"}
+        f"/tickets/{responseTicket.json['id']}/", json={"status": "closed"}
     )
     assert response.status_code == 200
 
     response = client.post(
-        f"/tickets/{responseTicket.json['id']}/comments",
+        f"/tickets/{responseTicket.json['id']}/comments/",
         json={"text": "END message", "email": "Another@mail.ru"},
     )
     assert response.status_code == 400

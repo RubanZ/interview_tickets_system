@@ -35,7 +35,7 @@ class Ticket(Base):
     )
 
     comments: Mapped[List["TicketComment"]] = relationship(
-        "TicketComment", back_populates="ticket"
+        "TicketComment", back_populates="ticket", lazy="subquery"
     )
 
     def __repr__(self):

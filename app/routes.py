@@ -24,8 +24,9 @@ def get_tickets():
     total, db_result = TicketCRUD.get_tickets(query.page, query.page_size)
     return Response(
         TicketPaginationResponse(
-            total=total, items=[TicketResponse.from_orm(ticket) for ticket in db_result]
-        ).json(),
+            total=total,
+            items=[TicketResponse.model_validate(ticket) for ticket in db_result],
+        ).model_dump_json(),
         200,
         mimetype="application/json",
     )
@@ -39,43 +40,49 @@ def create_ticket():
 
     cache.clear()
     return Response(
-        TicketResponse.from_orm(new_ticket).json(), 201, mimetype="application/json"
+        TicketResponse.model_validate(new_ticket).model_dump_json(),
+        201,
+        mimetype="application/json",
     )
 
 
 @ticket_blueprint.route("/<int:ticket_id>/", methods=["GET"])
 @cache.cached(timeout=30, key_prefix="ticket")
 def get_ticket(ticket_id: int):
-    ticket = TicketCRUD.get_ticket(ticket_id, for_update=False)
+    ticket = TicketCRUD.get_ticket(ticket_id)
 
     return Response(
-        TicketResponse.from_orm(ticket).json(), 200, mimetype="application/json"
+        TicketResponse.model_validate(ticket).model_dump_json(),
+        200,
+        mimetype="application/json",
     )
 
 
 @ticket_blueprint.route("/<int:ticket_id>/", methods=["PUT"])
 def update_ticket(ticket_id: int):
-    ticket = TicketCRUD.get_ticket(ticket_id, for_update=True)
     body = TicketUpdateBody(**request.json)
 
-    updated_ticket = TicketCRUD.update_ticket(ticket, body.status)
+    updated_ticket = TicketCRUD.update_ticket(ticket_id, body.status)
 
     cache.clear()
     return Response(
-        TicketResponse.from_orm(updated_ticket).json(), 200, mimetype="application/json"
+        TicketResponse.model_validate(updated_ticket).model_dump_json(),
+        200,
+        mimetype="application/json",
     )
 
 
 @ticket_blueprint.route("/<int:ticket_id>/comments/", methods=["POST"])
 def add_comment(ticket_id: int):
     body = TicketCommentCreateBody(**request.json)
-    ticket = TicketCRUD.get_ticket(ticket_id, for_update=True)
 
-    new_comment = TicketCommentCRUD.create_ticket_comment(ticket, body.text, body.email)
+    new_comment = TicketCommentCRUD.create_ticket_comment(
+        ticket_id, body.text, body.email
+    )
 
     cache.clear()
     return Response(
-        TicketCommentResponse.from_orm(new_comment).json(),
+        TicketCommentResponse.model_validate(new_comment).model_dump_json(),
         201,
         mimetype="application/json",
     )
