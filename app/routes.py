@@ -34,9 +34,9 @@ def get_tickets():
 @ticket_blueprint.route("/", methods=["POST"])
 def create_ticket():
     body = TicketCreateBody(**request.json)
-    
+
     new_ticket = TicketCRUD.create_ticket(body.subject, body.text, body.email)
-    
+
     cache.clear()
     return Response(
         TicketResponse.from_orm(new_ticket).json(), 201, mimetype="application/json"
@@ -59,7 +59,7 @@ def update_ticket(ticket_id: int):
     body = TicketUpdateBody(**request.json)
 
     updated_ticket = TicketCRUD.update_ticket(ticket, body.status)
-    
+
     cache.clear()
     return Response(
         TicketResponse.from_orm(updated_ticket).json(), 200, mimetype="application/json"
@@ -70,7 +70,7 @@ def update_ticket(ticket_id: int):
 def add_comment(ticket_id: int):
     body = TicketCommentCreateBody(**request.json)
     ticket = TicketCRUD.get_ticket(ticket_id, for_update=True)
-    
+
     new_comment = TicketCommentCRUD.create_ticket_comment(ticket, body.text, body.email)
 
     cache.clear()
@@ -79,4 +79,3 @@ def add_comment(ticket_id: int):
         201,
         mimetype="application/json",
     )
-

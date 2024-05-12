@@ -10,13 +10,15 @@ from app.routes import ticket_blueprint
 from app.schemas.responses.base import ErrorResponse
 
 app = Flask(__name__)
-app.config.update({
-    "SQLALCHEMY_TRACK_MODIFICATIONS": False,
-    "SQLALCHEMY_DATABASE_URI": settings.DATABASE_URL,
-    "TESTING": settings.TESTING,
-    "CACHE_TYPE": "redis" if settings.TESTING is False else "SimpleCache",
-    "CACHE_REDIS_URL": settings.REDIS_URL,
-})
+app.config.update(
+    {
+        "SQLALCHEMY_TRACK_MODIFICATIONS": False,
+        "SQLALCHEMY_DATABASE_URI": settings.DATABASE_URL,
+        "TESTING": settings.TESTING,
+        "CACHE_TYPE": "redis" if settings.TESTING is False else "SimpleCache",
+        "CACHE_REDIS_URL": settings.REDIS_URL,
+    }
+)
 db.init_app(app)
 migrate = Migrate(app, db)
 cache.init_app(app)
