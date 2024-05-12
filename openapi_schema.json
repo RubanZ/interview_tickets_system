@@ -1,0 +1,510 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Interveiw ticket system",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://127.0.0.1:8000"
+    }
+  ],
+  "paths": {
+    "/tickets/": {
+      "get": {
+        "operationId": "getTickets",
+        "tags": [
+          "tickets"
+        ],
+        "summary": "Get tickets",
+        "description": "Get tickets list",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/TicketsListQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "TicketsListResponse",
+                  "type": "object",
+                  "properties": {
+                    "total": {
+                      "title": "Total",
+                      "type": "integer"
+                    },
+                    "items": {
+                      "default": [],
+                      "items": {
+                        "$ref": "#/components/schemas/TicketResponse"
+                      },
+                      "title": "Items",
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "total"
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createTicket",
+        "tags": [
+          "tickets"
+        ],
+        "summary": "Create ticket",
+        "description": "Create ticket",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TicketCreateBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TicketResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tickets/{id}/": {
+      "get": {
+        "operationId": "getTicket",
+        "tags": [
+          "tickets"
+        ],
+        "summary": "Get ticket",
+        "description": "Get ticket",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TicketResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "operationId": "updateTicket",
+        "tags": [
+          "tickets"
+        ],
+        "summary": "Update ticket",
+        "description": "Update ticket",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TicketUpdateBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TicketResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tickets/{id}/comments/": {
+        "post": {
+            "operationId": "createTicketComment",
+            "tags": [
+            "tickets"
+            ],
+            "summary": "Create ticket comment",
+            "description": "Create ticket comment",
+            "parameters": [
+            {
+                "name": "id",
+                "in": "path",
+                "required": true,
+                "schema": {
+                "type": "integer"
+                }
+            }
+            ],
+            "requestBody": {
+            "content": {
+                "application/json": {
+                "schema": {
+                    "$ref": "#/components/schemas/TicketCommentCreateBody"
+                }
+                }
+            },
+            "required": true
+            },
+            "responses": {
+            "201": {
+                "description": "Created",
+                "content": {
+                "application/json": {
+                    "schema": {
+                    "$ref": "#/components/schemas/TicketCommentResponse"
+                    }
+                }
+                }
+            },
+            "400": {
+                "description": "Bad Request",
+                "content": {
+                "application/json": {
+                    "schema": {
+                    "$ref": "#/components/schemas/ErrorResponse"
+                    }
+                }
+                }
+            },
+            "404": {
+                "description": "Not Found",
+                "content": {
+                "application/json": {
+                    "schema": {
+                    "$ref": "#/components/schemas/ErrorResponse"
+                    }
+                }
+                }
+            }
+            }
+        }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ErrorResponse": {
+        "example": {
+          "details": {
+            "field": "value"
+          },
+          "message": "Validation error"
+        },
+        "properties": {
+          "message": {
+            "title": "Message",
+            "type": "string"
+          },
+          "details": {
+            "anyOf": [
+              {
+                "additionalProperties": {
+                  "type": "string"
+                },
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Details"
+          }
+        },
+        "required": [
+          "message"
+        ],
+        "title": "ErrorResponse",
+        "type": "object"
+      },
+      "TicketsListQuery": {
+        "properties": {
+          "page_size": {
+            "default": 10,
+            "maximum": 100,
+            "minimum": 1,
+            "title": "Page size",
+            "type": "integer"
+          },
+          "page": {
+            "default": 1,
+            "minimum": 1,
+            "title": "Page",
+            "type": "integer"
+          }
+        },
+        "title": "TicketsListQuery",
+        "type": "object"
+      },
+      "TicketCreateBody": {
+        "properties": {
+          "subject": {
+            "maxLength": 256,
+            "title": "Subject",
+            "type": "string"
+          },
+          "text": {
+            "maxLength": 2048,
+            "title": "Text",
+            "type": "string"
+          },
+          "email": {
+            "format": "email",
+            "title": "Email",
+            "type": "string"
+          }
+        },
+        "required": [
+          "subject",
+          "text",
+          "email"
+        ],
+        "title": "TicketCreateBody",
+        "type": "object"
+      },
+      "TicketStatuses": {
+        "enum": [
+          "open",
+          "waiting_for_answer",
+          "answered",
+          "closed"
+        ],
+        "title": "TicketStatuses",
+        "type": "string"
+      },
+      "TicketResponse": {
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "integer"
+          },
+          "subject": {
+            "default": "",
+            "maxLength": 256,
+            "title": "Subject",
+            "type": "string"
+          },
+          "text": {
+            "default": "",
+            "title": "Text",
+            "type": "string"
+          },
+          "email": {
+            "format": "email",
+            "title": "Email",
+            "type": "string"
+          },
+          "status": {
+            "$ref": "#/components/schemas/TicketStatuses"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "updated_at": {
+            "format": "date-time",
+            "title": "Updated At",
+            "type": "string"
+          },
+          "comments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TicketCommentResponse"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "email",
+          "status",
+          "created_at",
+          "updated_at",
+          "comments"
+        ],
+        "title": "TicketResponse",
+        "type": "object"
+      },
+      "TicketUpdateBody": {
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/TicketStatuses"
+          }
+        },
+        "required": [
+          "status"
+        ],
+        "title": "TicketUpdateBody",
+        "type": "object"
+      },
+      "TicketCommentResponse": {
+        "type": "object",
+        "title": "TicketCommentResponse",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "title": "Id"
+          },
+          "ticket_id": {
+              "type": "integer",
+              "title": "Ticket Id"
+          },
+          "text": {
+              "type": "string",
+              "title": "Text"
+          },
+          "email": {
+            "type": "string",
+            "title": "Email",
+            "format": "email"
+          },
+          "created_at": {
+              "type": "string",
+              "format": "date-time",
+              "title": "Created At"
+          }
+        },
+        "required": [
+          "id",
+          "ticket_id",
+          "text",
+          "email",
+          "created_at"
+        ]
+      },
+      "TicketCommentCreateBody": {
+        "type": "object",
+        "title": "TicketCommentCreateBody",
+        "properties": {
+          "text": {
+            "type": "string",
+            "title": "Text"
+          },
+          "email": {
+            "type": "string",
+            "title": "Email",
+            "format": "email"
+          }
+        },
+        "required": [
+          "text",
+          "email"
+        ]
+      }
+    }
+  }
+}

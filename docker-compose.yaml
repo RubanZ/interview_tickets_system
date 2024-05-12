@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+  postgres:
+    container_name: postgres
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:?error}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?error}
+      POSTGRES_DB: ${POSTGRES_DB:?error}
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "postgres"]
+
+  redis:
+    container_name: redis
+    image: redis:latest
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+
+  flask-api:
+    container_name: flask-api
+    build: .
+    environment:
+      FLASK_APP: app.main
+      FLASK_ENV: production
+      REDIS_URL: redis://redis:6379/0
+      DATABASE_URL: postgresql://${POSTGRES_USER:?error}:${POSTGRES_PASSWORD:?error}@postgres:5432/${POSTGRES_DB:?error}
+      TESTING: 0
+    ports:
+      - "8000:5000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy

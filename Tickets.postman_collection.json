@@ -1,0 +1,602 @@
+{
+	"info": {
+		"_postman_id": "0d2ba089-d76f-4b46-ba1c-a6efb05e13ed",
+		"name": "Tickets",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15137285"
+	},
+	"item": [
+		{
+			"name": "List of tickets",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/tickets/?page=1&page_size=100",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"tickets",
+						""
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "page_size",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/tickets/?page=10&page_size=100",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"tickets",
+								""
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "10"
+								},
+								{
+									"key": "page_size",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.0.3 Python/3.12.3"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 11 May 2024 08:20:38 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "37740"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"total\": 11996,\n    \"items\": [\n        {\n            \"id\": 901,\n            \"subject\": \"Kids\",\n            \"text\": \"Soluta esse ab eos officiis animi necessitatibus ipsa ipsum. Est ipsa rem aut sunt perferendis consequatur a dolorum consectetur. Eos et voluptate nam sint. Dicta suscipit nesciunt id nostrum omnis non minima.\",\n            \"email\": \"quentin90@gmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.320731\",\n            \"updated_at\": \"2024-05-10T15:51:48.320731\"\n        },\n        {\n            \"id\": 902,\n            \"subject\": \"Industrial\",\n            \"text\": \"Impedit ut earum magnam id occaecati qui. Tenetur cupiditate neque ut culpa a sed et. Qui quod esse tenetur exercitationem sapiente placeat. Consequatur asperiores ducimus fugiat beatae enim adipisci.\",\n            \"email\": \"haylie_farrell@hotmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.356392\",\n            \"updated_at\": \"2024-05-10T15:51:48.356392\"\n        },\n        {\n            \"id\": 903,\n            \"subject\": \"Music\",\n            \"text\": \"Sed asperiores sed. Perspiciatis deserunt libero ea rerum repellendus laboriosam facilis dolores. Laudantium dolor autem.\",\n            \"email\": \"robyn13@hotmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.360468\",\n            \"updated_at\": \"2024-05-10T15:51:48.360468\"\n        },\n        {\n            \"id\": 904,\n            \"subject\": \"Computers\",\n            \"text\": \"Et est ea vel voluptates sequi molestiae modi. Sapiente aut eos et rem est temporibus tempora. Id quibusdam ut cum voluptatibus omnis ab. Sed possimus qui. Quaerat est id modi.\",\n            \"email\": \"zackery.kertzmann@yahoo.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.380794\",\n            \"updated_at\": \"2024-05-10T15:51:48.380794\"\n        },\n        {\n            \"id\": 905,\n            \"subject\": \"Beauty\",\n            \"text\": \"Placeat ipsam qui nisi ut. Aspernatur deleniti dolorem animi doloremque aliquam nihil. Non porro sint voluptate suscipit consequatur magnam ullam. Cupiditate et facere rem quisquam. Et accusantium explicabo quia eius ipsam est. Aspernatur quia excepturi reprehenderit aut dicta alias aut et nemo.\",\n            \"email\": \"alden_keeling@gmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.388244\",\n            \"updated_at\": \"2024-05-10T15:51:48.388244\"\n        },\n        {\n            \"id\": 906,\n            \"subject\": \"Beauty\",\n            \"text\": \"Asperiores vel totam. Ea quis ex eligendi. Doloribus blanditiis modi natus enim beatae illum inventore dicta.\",\n            \"email\": \"beau_denesik52@gmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.399511\",\n            \"updated_at\": \"2024-05-10T15:51:48.399511\"\n        },\n        {\n            \"id\": 907,\n            \"subject\": \"Games\",\n            \"text\": \"Soluta voluptas deserunt eligendi quia omnis nihil harum assumenda minus. Recusandae dolor in. Error et aut. Sequi aut explicabo dolorem voluptas magni porro. Autem nemo veritatis numquam consequuntur itaque eum id velit necessitatibus. Ut dolorum molestiae et sunt omnis in accusantium ea error.\",\n            \"email\": \"lorenz8@gmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.427220\",\n            \"updated_at\": \"2024-05-10T15:51:48.427220\"\n        },\n        {\n            \"id\": 908,\n            \"subject\": \"Toys\",\n            \"text\": \"Nostrum cumque magni similique voluptatibus. Libero aliquam porro sapiente recusandae et et explicabo. Est qui officia aliquid. Nam rerum sunt qui quo ea dolorum iste aspernatur.\",\n            \"email\": \"rebeca_weimann@hotmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.433265\",\n            \"updated_at\": \"2024-05-10T15:51:48.433265\"\n        },\n        {\n            \"id\": 909,\n            \"subject\": \"Baby\",\n            \"text\": \"Quis excepturi quia. Eum quia vitae placeat sed qui adipisci aspernatur culpa labore. Optio optio facilis rerum non unde earum. Mollitia autem quo. Ullam exercitationem itaque nemo aliquam tempora id quis et eos.\",\n            \"email\": \"trystan_pouros92@yahoo.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.445021\",\n            \"updated_at\": \"2024-05-10T15:51:48.445021\"\n        },\n        {\n            \"id\": 910,\n            \"subject\": \"Jewelery\",\n            \"text\": \"Qui in dolorum possimus doloribus quaerat eum. Sint laboriosam id occaecati amet qui et laudantium ipsam voluptas. Eveniet ab aliquam suscipit ratione dolor qui hic ab. Quisquam quo laboriosam ducimus quasi ad. Nostrum ad rerum omnis. Rerum necessitatibus ipsam quaerat aut ipsum doloribus cupiditate maiores.\",\n            \"email\": \"kenny_tillman42@yahoo.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.449486\",\n            \"updated_at\": \"2024-05-10T15:51:48.449486\"\n        },\n        {\n            \"id\": 911,\n            \"subject\": \"Music\",\n            \"text\": \"Aliquam omnis quasi eligendi facere. Facere sit reprehenderit voluptas aut deserunt eos. Id ex aliquam exercitationem.\",\n            \"email\": \"marlin19@yahoo.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.457276\",\n            \"updated_at\": \"2024-05-10T15:51:48.457276\"\n        },\n        {\n            \"id\": 912,\n            \"subject\": \"Automotive\",\n            \"text\": \"Totam quis dolor aut repellendus molestiae odit in dolores. Iste assumenda debitis labore. Sit dicta ipsam dignissimos maxime. Quae aut sed deleniti ut ipsum esse doloribus. Tempore rerum et velit eum veritatis rerum recusandae.\",\n            \"email\": \"reina.jacobs16@gmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.465104\",\n            \"updated_at\": \"2024-05-10T15:51:48.465104\"\n        },\n        {\n            \"id\": 913,\n            \"subject\": \"Baby\",\n            \"text\": \"Consequuntur et debitis odio sed voluptas adipisci. Ea alias rerum consequatur et iste aut dolor consectetur. Eligendi et voluptate et esse exercitationem necessitatibus. Id in molestiae rerum deserunt debitis.\",\n            \"email\": \"noemy_hilll23@gmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.513288\",\n            \"updated_at\": \"2024-05-10T15:51:48.513288\"\n        },\n        {\n            \"id\": 914,\n            \"subject\": \"Movies\",\n            \"text\": \"Excepturi quo distinctio occaecati aut. Ipsa magni autem deserunt aut corporis exercitationem non. Ducimus sequi id quae. Magnam optio dignissimos. Enim aut quod id ullam. Libero nulla aliquid accusantium et at possimus.\",\n            \"email\": \"arianna80@gmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.524704\",\n            \"updated_at\": \"2024-05-10T15:51:48.524704\"\n        },\n        {\n            \"id\": 915,\n            \"subject\": \"Garden\",\n            \"text\": \"Temporibus enim cum eius quidem quia. Aperiam non iure. Est aspernatur doloribus praesentium et aliquid sequi est accusamus. In nemo aliquam velit sunt deleniti et quaerat explicabo modi.\",\n            \"email\": \"verona36@gmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.526884\",\n            \"updated_at\": \"2024-05-10T15:51:48.526884\"\n        },\n        {\n            \"id\": 916,\n            \"subject\": \"Baby\",\n            \"text\": \"Autem nesciunt et assumenda aliquam autem sunt reiciendis. Porro quia ratione quia natus possimus sit. Deleniti accusamus consequatur doloremque quas nihil veniam eligendi vero voluptatem. Eum minima iusto vel voluptatem voluptas. Doloribus enim libero quaerat facilis amet. Dignissimos vitae est est aliquid sunt dolor.\",\n            \"email\": \"cielo86@gmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.534871\",\n            \"updated_at\": \"2024-05-10T15:51:48.534871\"\n        },\n        {\n            \"id\": 917,\n            \"subject\": \"Toys\",\n            \"text\": \"Voluptas doloribus et pariatur tempore rerum rerum architecto. Quia inventore ipsa ad exercitationem harum aut tempora. Dolores assumenda ea repellendus expedita esse recusandae nulla rerum adipisci. Quam quia debitis nemo illum qui. Quod consequuntur eius voluptas molestiae ea eius voluptas quia. Modi repellendus debitis eveniet minus.\",\n            \"email\": \"alanis.halvorson99@gmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.546991\",\n            \"updated_at\": \"2024-05-10T15:51:48.546991\"\n        },\n        {\n            \"id\": 918,\n            \"subject\": \"Music\",\n            \"text\": \"Qui culpa enim numquam praesentium minima nihil voluptatem. In dolores minima dicta suscipit aut voluptatem. Neque earum sint maiores velit molestiae. Quasi totam placeat iste. Perferendis et a totam quaerat. Quis ex dolor voluptas recusandae et aut pariatur aperiam molestias.\",\n            \"email\": \"antoinette.huel13@hotmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.548198\",\n            \"updated_at\": \"2024-05-10T15:51:48.548198\"\n        },\n        {\n            \"id\": 919,\n            \"subject\": \"Beauty\",\n            \"text\": \"Pariatur vel eaque eum quia autem illo et. Eos adipisci aut sint. Ut veniam quidem fuga amet eveniet eveniet repellendus qui.\",\n            \"email\": \"gregg21@yahoo.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.552036\",\n            \"updated_at\": \"2024-05-10T15:51:48.552036\"\n        },\n        {\n            \"id\": 920,\n            \"subject\": \"Movies\",\n            \"text\": \"Quia voluptas placeat qui voluptate. Aut impedit voluptate totam et autem accusantium et dolorem facere. Atque aliquid quam nemo placeat in dolore. Et animi et aut sunt aliquam reiciendis deleniti. Eum quia esse est ut voluptate. Placeat eligendi quasi animi.\",\n            \"email\": \"hollie3@gmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.581000\",\n            \"updated_at\": \"2024-05-10T15:51:48.581000\"\n        },\n        {\n            \"id\": 921,\n            \"subject\": \"Garden\",\n            \"text\": \"Ab debitis reprehenderit debitis dolore qui iste sunt. Neque similique quia possimus. Dolorem corrupti eligendi id iusto omnis quo aut exercitationem.\",\n            \"email\": \"jadyn_fay1@gmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.591604\",\n            \"updated_at\": \"2024-05-10T15:51:48.591604\"\n        },\n        {\n            \"id\": 922,\n            \"subject\": \"Shoes\",\n            \"text\": \"Aperiam consequatur eius itaque. Qui sit id totam sequi eaque aperiam sed qui et. Fugiat iste qui voluptas. Suscipit assumenda facilis aspernatur. Quia animi nulla esse.\",\n            \"email\": \"mario_feil82@gmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.593315\",\n            \"updated_at\": \"2024-05-10T15:51:48.593315\"\n        },\n        {\n            \"id\": 923,\n            \"subject\": \"Games\",\n            \"text\": \"Ea dolorum dolores iste eum quisquam iusto et. Consequuntur perspiciatis qui consequatur deserunt nemo. Sed recusandae ut dignissimos sequi ullam et provident.\",\n            \"email\": \"price_jones@yahoo.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.595730\",\n            \"updated_at\": \"2024-05-10T15:51:48.595730\"\n        },\n        {\n            \"id\": 924,\n            \"subject\": \"Computers\",\n            \"text\": \"Qui non quia accusantium fugiat et praesentium molestias quos. Debitis unde pariatur dignissimos architecto vel consequatur eius. Harum odit aut tenetur accusamus ullam provident voluptatem quam odit. Eos enim provident dolores perferendis in.\",\n            \"email\": \"daryl.nolan72@hotmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.598260\",\n            \"updated_at\": \"2024-05-10T15:51:48.598260\"\n        },\n        {\n            \"id\": 925,\n            \"subject\": \"Movies\",\n            \"text\": \"Est sunt sunt delectus quia sint laboriosam quia aperiam. Repellat cupiditate provident officia hic repudiandae enim molestiae sequi. Provident ab voluptas qui occaecati. Quo adipisci cumque occaecati enim eveniet repudiandae temporibus.\",\n            \"email\": \"emma.herzog80@yahoo.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.599530\",\n            \"updated_at\": \"2024-05-10T15:51:48.599530\"\n        },\n        {\n            \"id\": 927,\n            \"subject\": \"Home\",\n            \"text\": \"Vitae recusandae voluptatem vel aut temporibus omnis dolor et nemo. Illo rerum repudiandae architecto est ipsam. Et nihil consectetur dolor libero tempora in. Rem omnis dolorem quisquam ullam. Exercitationem at beatae consequuntur culpa sint consectetur aut qui. Fuga ut numquam.\",\n            \"email\": \"darion_doyle@hotmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.612544\",\n            \"updated_at\": \"2024-05-10T15:51:48.612544\"\n        },\n        {\n            \"id\": 926,\n            \"subject\": \"Grocery\",\n            \"text\": \"Soluta autem odit. Id rem quidem. Rerum fugit totam praesentium pariatur enim optio. Fuga animi eius voluptatem voluptatem et natus temporibus.\",\n            \"email\": \"juston_aufderhar89@hotmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.613624\",\n            \"updated_at\": \"2024-05-10T15:51:48.613624\"\n        },\n        {\n            \"id\": 928,\n            \"subject\": \"Garden\",\n            \"text\": \"Ea est sequi dolor omnis. Sint aut alias temporibus nemo magni alias consequatur ut. Officiis architecto soluta quis sint quis rerum voluptatem repellat alias. Recusandae exercitationem voluptates blanditiis voluptatibus quo.\",\n            \"email\": \"makenzie24@hotmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.623818\",\n            \"updated_at\": \"2024-05-10T15:51:48.623818\"\n        },\n        {\n            \"id\": 929,\n            \"subject\": \"Automotive\",\n            \"text\": \"Nam cum ipsam doloremque tempora quia omnis excepturi. Error autem ut perferendis repellat rem voluptates est non. Consectetur sed dolorem porro quae explicabo officiis temporibus cum dolor.\",\n            \"email\": \"laura32@hotmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.630571\",\n            \"updated_at\": \"2024-05-10T15:51:48.630571\"\n        },\n        {\n            \"id\": 930,\n            \"subject\": \"Automotive\",\n            \"text\": \"Hic sit fugit deserunt soluta culpa. Rerum a earum minus delectus illum non. Eveniet est ipsa qui rerum sunt ipsam aut. Praesentium a ea quam facere occaecati. Magni aliquid pariatur quae quae qui dicta at doloribus quia.\",\n            \"email\": \"catherine.muller80@hotmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.650772\",\n            \"updated_at\": \"2024-05-10T15:51:48.650772\"\n        },\n        {\n            \"id\": 931,\n            \"subject\": \"Tools\",\n            \"text\": \"Sunt necessitatibus eius nihil quis ea non et sit id. Id dolorem ipsam quo iusto praesentium qui a. Voluptatem voluptatem quae quisquam. Fugiat dicta cupiditate sit ab et quaerat molestiae.\",\n            \"email\": \"sophia.vandervort@yahoo.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.657546\",\n            \"updated_at\": \"2024-05-10T15:51:48.657546\"\n        },\n        {\n            \"id\": 932,\n            \"subject\": \"Clothing\",\n            \"text\": \"At ex voluptate quo sed reprehenderit laudantium. Cum veritatis aliquid et eum. Tenetur neque dolor dolorum fugiat doloremque qui minima nostrum et. Similique inventore inventore. Est voluptas animi cupiditate sed sunt reprehenderit corrupti.\",\n            \"email\": \"florence51@hotmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.661077\",\n            \"updated_at\": \"2024-05-10T15:51:48.661077\"\n        },\n        {\n            \"id\": 933,\n            \"subject\": \"Music\",\n            \"text\": \"Aperiam rem quidem cum labore nulla ea sit quam. Quia et quisquam non omnis rem et nihil. Sit exercitationem velit. Consequatur nisi molestiae eos facere in minima perspiciatis aperiam.\",\n            \"email\": \"sheldon32@hotmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.661585\",\n            \"updated_at\": \"2024-05-10T15:51:48.661585\"\n        },\n        {\n            \"id\": 934,\n            \"subject\": \"Health\",\n            \"text\": \"Amet ut sunt quia minus nobis inventore quidem praesentium. Quia aut autem est aut. Sit iste aut voluptatem. Esse fugiat eum quo ut consequatur nostrum et fuga. Magni eum voluptatem odio repellendus velit aut. Ab dolor similique deleniti minus possimus maiores corrupti magni.\",\n            \"email\": \"alberta_hauck59@yahoo.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.667334\",\n            \"updated_at\": \"2024-05-10T15:51:48.667334\"\n        },\n        {\n            \"id\": 935,\n            \"subject\": \"Music\",\n            \"text\": \"Error consectetur porro tempore cum unde rem vel occaecati. Asperiores et tempore ea reiciendis. Sunt quaerat veniam dolorem consequatur dolores quia doloremque. Praesentium id sit.\",\n            \"email\": \"ernestine_oreilly@yahoo.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.685289\",\n            \"updated_at\": \"2024-05-10T15:51:48.685289\"\n        },\n        {\n            \"id\": 936,\n            \"subject\": \"Games\",\n            \"text\": \"Omnis voluptas nisi est dolores impedit mollitia repellendus excepturi. Dignissimos eveniet repellendus saepe ipsam ad. Alias sint animi occaecati consequatur quae beatae.\",\n            \"email\": \"vivienne79@hotmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.687557\",\n            \"updated_at\": \"2024-05-10T15:51:48.687557\"\n        },\n        {\n            \"id\": 937,\n            \"subject\": \"Movies\",\n            \"text\": \"Labore aut at inventore debitis blanditiis. Quis et qui ratione possimus rem. Recusandae delectus vel numquam qui aut. Ut eaque suscipit dolor unde quo rerum.\",\n            \"email\": \"alan84@gmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.703037\",\n            \"updated_at\": \"2024-05-10T15:51:48.703037\"\n        },\n        {\n            \"id\": 938,\n            \"subject\": \"Music\",\n            \"text\": \"Quibusdam suscipit ea autem. Consectetur blanditiis magni tempora aut veniam. In natus porro inventore quam aut. At earum eius mollitia omnis. Ut modi dolores.\",\n            \"email\": \"stefan.cole89@gmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.705478\",\n            \"updated_at\": \"2024-05-10T15:51:48.705478\"\n        },\n        {\n            \"id\": 939,\n            \"subject\": \"Outdoors\",\n            \"text\": \"Impedit repellat tempora. Et iste iusto et aperiam nisi nisi et. Qui qui cum a. Cupiditate fuga aut magnam quisquam velit dicta.\",\n            \"email\": \"tamia.rodriguez21@gmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.727549\",\n            \"updated_at\": \"2024-05-10T15:51:48.727549\"\n        },\n        {\n            \"id\": 940,\n            \"subject\": \"Home\",\n            \"text\": \"Est ut sit neque et facere. Omnis est assumenda occaecati molestias. Molestiae porro cum sit eos dignissimos. Perspiciatis libero officiis et nihil. Ipsam voluptas autem repudiandae quaerat porro odio. Nam dolorem inventore quam minus.\",\n            \"email\": \"dereck_lueilwitz89@yahoo.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.746623\",\n            \"updated_at\": \"2024-05-10T15:51:48.746623\"\n        },\n        {\n            \"id\": 941,\n            \"subject\": \"Outdoors\",\n            \"text\": \"Magnam alias nobis non est ut. Ut dicta eos velit odit corrupti omnis quidem. Voluptates et voluptas.\",\n            \"email\": \"adolf86@gmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.750884\",\n            \"updated_at\": \"2024-05-10T15:51:48.750884\"\n        },\n        {\n            \"id\": 942,\n            \"subject\": \"Home\",\n            \"text\": \"Placeat dolores doloribus ea dolor aut non fuga. Et doloremque vitae et provident repudiandae corrupti omnis. Perferendis error omnis et qui adipisci ut expedita. Est exercitationem dignissimos perferendis eveniet nulla.\",\n            \"email\": \"katheryn_yundt2@yahoo.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.769431\",\n            \"updated_at\": \"2024-05-10T15:51:48.769431\"\n        },\n        {\n            \"id\": 943,\n            \"subject\": \"Industrial\",\n            \"text\": \"Dolores perspiciatis nostrum in dicta et nihil veritatis culpa similique. Ut ut maxime porro unde explicabo iste dolorem sit iusto. Eius qui sapiente officiis. Magni facilis laudantium reprehenderit sed temporibus sit quidem. Enim voluptate consequuntur voluptatibus repudiandae voluptatem cum voluptatem delectus illo.\",\n            \"email\": \"ariane_cormier24@gmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.769777\",\n            \"updated_at\": \"2024-05-10T15:51:48.769777\"\n        },\n        {\n            \"id\": 944,\n            \"subject\": \"Automotive\",\n            \"text\": \"Dolor culpa quod distinctio earum sit. Distinctio maxime rerum dolor saepe rerum natus. Possimus reiciendis autem voluptate dolor sint harum exercitationem sunt.\",\n            \"email\": \"zelda.damore40@gmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.797041\",\n            \"updated_at\": \"2024-05-10T15:51:48.797041\"\n        },\n        {\n            \"id\": 945,\n            \"subject\": \"Toys\",\n            \"text\": \"Tenetur facere sit non delectus ut qui possimus. Magni tempora eius placeat aut aut. Eos facilis et minima omnis accusantium soluta odit qui vero. Laborum dolor est ut autem dolor numquam velit et. Nulla vero nam est aut.\",\n            \"email\": \"green_bosco65@hotmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.804816\",\n            \"updated_at\": \"2024-05-10T15:51:48.804816\"\n        },\n        {\n            \"id\": 946,\n            \"subject\": \"Clothing\",\n            \"text\": \"Illo aliquam dolores nihil necessitatibus. Vitae voluptas provident voluptatibus voluptate ullam reiciendis dolor. Ab doloribus at minus aliquid ipsum ipsam similique sint. Aspernatur enim magnam voluptatem.\",\n            \"email\": \"flossie.stiedemann@hotmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.826150\",\n            \"updated_at\": \"2024-05-10T15:51:48.826150\"\n        },\n        {\n            \"id\": 947,\n            \"subject\": \"Games\",\n            \"text\": \"Ex aut modi rem aspernatur ipsa eos harum maxime est. Nobis et et tempore repellat ea quos harum. Possimus suscipit blanditiis doloribus cum est et. Minus ut soluta amet vel qui.\",\n            \"email\": \"joseph.crist@yahoo.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.856710\",\n            \"updated_at\": \"2024-05-10T15:51:48.856710\"\n        },\n        {\n            \"id\": 948,\n            \"subject\": \"Computers\",\n            \"text\": \"Aliquid sapiente nihil deleniti hic veniam sunt eligendi. Dolorum possimus sint voluptates consequatur voluptas numquam alias. Ipsam enim eum eos saepe ut voluptatem.\",\n            \"email\": \"anastacio_bergnaum@yahoo.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.860581\",\n            \"updated_at\": \"2024-05-10T15:51:48.860581\"\n        },\n        {\n            \"id\": 949,\n            \"subject\": \"Music\",\n            \"text\": \"Id exercitationem suscipit dolores sequi. Eaque pariatur corrupti. Expedita dolorum soluta et doloribus illo labore.\",\n            \"email\": \"raleigh.hermann@gmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.869846\",\n            \"updated_at\": \"2024-05-10T15:51:48.869846\"\n        },\n        {\n            \"id\": 950,\n            \"subject\": \"Baby\",\n            \"text\": \"Autem accusamus itaque quod quae accusantium. Laborum voluptatem voluptas odio omnis reiciendis consequatur. Et ratione nesciunt dolorum nihil molestiae ab magnam similique. Quibusdam repellendus optio.\",\n            \"email\": \"talon_mills11@hotmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.876883\",\n            \"updated_at\": \"2024-05-10T15:51:48.876883\"\n        },\n        {\n            \"id\": 951,\n            \"subject\": \"Movies\",\n            \"text\": \"Cumque fugiat sint officia illo mollitia non perspiciatis alias. Aut voluptas itaque pariatur. Pariatur minus est nemo voluptas est. Eum esse et rerum sit nemo ut. Atque soluta ut pariatur error deserunt consequatur quasi. Aut aut consequatur praesentium voluptates quas saepe dicta vel rem.\",\n            \"email\": \"mozelle.predovic39@gmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.891888\",\n            \"updated_at\": \"2024-05-10T15:51:48.891888\"\n        },\n        {\n            \"id\": 952,\n            \"subject\": \"Jewelery\",\n            \"text\": \"Nulla id ab optio. Rerum et est nihil voluptatem necessitatibus ea ipsum. Fugit repudiandae tenetur modi quidem nostrum tempora laudantium error. Velit quia ullam voluptas saepe eaque et qui animi. Minus eos et ullam. Aut aut necessitatibus quis consectetur eum quis.\",\n            \"email\": \"frankie86@yahoo.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.899310\",\n            \"updated_at\": \"2024-05-10T15:51:48.899310\"\n        },\n        {\n            \"id\": 953,\n            \"subject\": \"Clothing\",\n            \"text\": \"Eaque ad culpa ad. Ab labore iure sunt reiciendis accusamus alias. Quia natus voluptatem sint. Ex ipsam et odio explicabo id. Dolores sit sit. Numquam perspiciatis deserunt molestias dolorem nihil.\",\n            \"email\": \"carter.hagenes58@hotmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.911310\",\n            \"updated_at\": \"2024-05-10T15:51:48.911310\"\n        },\n        {\n            \"id\": 954,\n            \"subject\": \"Outdoors\",\n            \"text\": \"Nemo hic eveniet excepturi. Iusto voluptas voluptates unde. Dignissimos nulla iusto. Fuga maxime omnis repellat fugit blanditiis sequi quis nam amet. Quidem eos ut impedit ducimus qui occaecati.\",\n            \"email\": \"carol13@hotmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.924560\",\n            \"updated_at\": \"2024-05-10T15:51:48.924560\"\n        },\n        {\n            \"id\": 955,\n            \"subject\": \"Industrial\",\n            \"text\": \"Mollitia ratione optio hic. Dolor sunt quisquam eaque officia rerum quam optio. Reprehenderit adipisci velit. Id sequi magnam maiores et incidunt recusandae blanditiis numquam. Perferendis autem explicabo perferendis itaque eius est temporibus.\",\n            \"email\": \"melyna.macejkovic66@gmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.931771\",\n            \"updated_at\": \"2024-05-10T15:51:48.931771\"\n        },\n        {\n            \"id\": 956,\n            \"subject\": \"Movies\",\n            \"text\": \"Nihil labore assumenda ducimus provident maxime modi voluptates. Quas autem qui. Provident placeat inventore. Temporibus numquam minus.\",\n            \"email\": \"price_grady95@yahoo.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.937635\",\n            \"updated_at\": \"2024-05-10T15:51:48.937635\"\n        },\n        {\n            \"id\": 957,\n            \"subject\": \"Jewelery\",\n            \"text\": \"Ipsum velit modi adipisci provident delectus nisi in. Animi alias qui aut quibusdam laboriosam dignissimos vitae voluptatem nihil. Nemo qui voluptatem eos soluta voluptates veniam dolores.\",\n            \"email\": \"earnestine14@gmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.938997\",\n            \"updated_at\": \"2024-05-10T15:51:48.938997\"\n        },\n        {\n            \"id\": 958,\n            \"subject\": \"Outdoors\",\n            \"text\": \"Dolor et minus sed est. Consequatur veniam et excepturi quis. Quaerat suscipit animi voluptas dolore soluta corporis sit.\",\n            \"email\": \"roxanne.nolan54@hotmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.944810\",\n            \"updated_at\": \"2024-05-10T15:51:48.944810\"\n        },\n        {\n            \"id\": 959,\n            \"subject\": \"Grocery\",\n            \"text\": \"Molestiae ut laudantium architecto. Suscipit rem aut omnis ratione qui ducimus minus. Vitae sunt perferendis et exercitationem quam sit. Reiciendis minus fugit amet voluptas cumque ducimus non quisquam est. Magni quaerat ut voluptatum architecto et magni voluptas. Inventore quia quam ut consequatur est voluptas odio maxime maiores.\",\n            \"email\": \"roxane_collier@hotmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.947775\",\n            \"updated_at\": \"2024-05-10T15:51:48.947775\"\n        },\n        {\n            \"id\": 960,\n            \"subject\": \"Clothing\",\n            \"text\": \"Eaque nam cum atque minus quo eos sunt similique. Suscipit quibusdam id nobis quam ipsum suscipit repellat maxime dignissimos. Tenetur aspernatur eaque eligendi tempore. Similique tempore dolores est rerum et quaerat quam.\",\n            \"email\": \"marcella.fisher@hotmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.953371\",\n            \"updated_at\": \"2024-05-10T15:51:48.953371\"\n        },\n        {\n            \"id\": 961,\n            \"subject\": \"Industrial\",\n            \"text\": \"Eum debitis qui officia unde sapiente est inventore voluptas placeat. Beatae quisquam numquam. At commodi est omnis quas consequatur eos maiores.\",\n            \"email\": \"delia.balistreri@gmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.986073\",\n            \"updated_at\": \"2024-05-10T15:51:48.986073\"\n        },\n        {\n            \"id\": 962,\n            \"subject\": \"Computers\",\n            \"text\": \"Dignissimos excepturi quibusdam beatae maiores a quia quae. Est ut incidunt a deserunt. Delectus quam ratione atque quo ut voluptatum ratione.\",\n            \"email\": \"uriel_treutel@yahoo.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.987634\",\n            \"updated_at\": \"2024-05-10T15:51:48.987634\"\n        },\n        {\n            \"id\": 963,\n            \"subject\": \"Shoes\",\n            \"text\": \"Ab et eligendi sit maiores occaecati quam praesentium. Voluptatem porro quisquam magnam. Ut rerum perferendis quam omnis officia cupiditate quod dolor ipsum. Est facere doloribus neque. Molestias id repellendus nemo veniam est. Necessitatibus velit accusantium aut nesciunt cupiditate sed est nihil.\",\n            \"email\": \"marta_will@hotmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:48.993934\",\n            \"updated_at\": \"2024-05-10T15:51:48.993934\"\n        },\n        {\n            \"id\": 964,\n            \"subject\": \"Books\",\n            \"text\": \"Et quia praesentium molestiae laboriosam. Molestiae ut et qui provident ab suscipit quo dolore. Pariatur sed reprehenderit vero nulla iusto. Nemo voluptates id maxime tenetur omnis.\",\n            \"email\": \"raven_kuphal@gmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:49.022746\",\n            \"updated_at\": \"2024-05-10T15:51:49.022746\"\n        },\n        {\n            \"id\": 965,\n            \"subject\": \"Toys\",\n            \"text\": \"Sequi veniam odit tempora libero aut. Sit eaque magnam quam sit. Ipsam at dolore ex quo sunt ipsam aut et magnam.\",\n            \"email\": \"keely_quigley@yahoo.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:49.023331\",\n            \"updated_at\": \"2024-05-10T15:51:49.023331\"\n        },\n        {\n            \"id\": 966,\n            \"subject\": \"Health\",\n            \"text\": \"Expedita quam neque necessitatibus. Commodi inventore harum. Sunt voluptas tempora labore. Eos nam ut illum. Tenetur officiis voluptas dolorem aut similique. Exercitationem quas dolores.\",\n            \"email\": \"jerad_paucek@yahoo.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:49.035529\",\n            \"updated_at\": \"2024-05-10T15:51:49.035529\"\n        },\n        {\n            \"id\": 967,\n            \"subject\": \"Clothing\",\n            \"text\": \"Eaque ea ut sit aut similique. Eum numquam ratione optio quos reprehenderit quibusdam consequatur vel. Quia vel corrupti. Asperiores debitis pariatur excepturi eligendi possimus consequatur. Corrupti tenetur accusamus est sint porro quisquam eum occaecati provident.\",\n            \"email\": \"daniella55@yahoo.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:49.063945\",\n            \"updated_at\": \"2024-05-10T15:51:49.063945\"\n        },\n        {\n            \"id\": 968,\n            \"subject\": \"Games\",\n            \"text\": \"Ducimus et aperiam quia facere occaecati magnam aut. Id voluptate distinctio. Corrupti totam optio expedita et et necessitatibus quos. Ut officiis aspernatur provident cum voluptatem rerum nemo. Similique ipsa nihil.\",\n            \"email\": \"ashtyn.renner@gmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:49.068729\",\n            \"updated_at\": \"2024-05-10T15:51:49.068729\"\n        },\n        {\n            \"id\": 969,\n            \"subject\": \"Books\",\n            \"text\": \"Rem distinctio voluptas. Omnis corporis fuga. Dignissimos quas et deleniti. Blanditiis aliquam ex itaque vel vel. Ut consequatur dolores. Repudiandae at dolor perferendis blanditiis eius molestiae voluptatem.\",\n            \"email\": \"scotty2@yahoo.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:49.075918\",\n            \"updated_at\": \"2024-05-10T15:51:49.075918\"\n        },\n        {\n            \"id\": 970,\n            \"subject\": \"Health\",\n            \"text\": \"Optio eligendi nesciunt aliquid perspiciatis. Aut vel ut voluptatibus neque tempora sed dolores reprehenderit officia. Officia eveniet debitis dignissimos fugiat vitae aut. Adipisci voluptatem alias soluta.\",\n            \"email\": \"alec88@hotmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:49.083370\",\n            \"updated_at\": \"2024-05-10T15:51:49.083370\"\n        },\n        {\n            \"id\": 971,\n            \"subject\": \"Home\",\n            \"text\": \"Delectus sint ab error aliquam. Placeat qui odio est. Ipsa perferendis illo est praesentium quaerat suscipit.\",\n            \"email\": \"dorthy_kunze@gmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:49.100668\",\n            \"updated_at\": \"2024-05-10T15:51:49.100668\"\n        },\n        {\n            \"id\": 972,\n            \"subject\": \"Grocery\",\n            \"text\": \"Eum vitae ipsum facere voluptas labore eveniet dolor doloribus. Possimus impedit nihil praesentium eos. Tenetur sit eveniet. Corporis deleniti fugiat sapiente minus perferendis. Quam eos nihil et in. Corrupti reiciendis molestiae corrupti quas similique odio.\",\n            \"email\": \"bernhard29@yahoo.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:49.111458\",\n            \"updated_at\": \"2024-05-10T15:51:49.111458\"\n        },\n        {\n            \"id\": 973,\n            \"subject\": \"Industrial\",\n            \"text\": \"Corporis et ut. Qui mollitia recusandae vitae est quod sunt. Ratione reiciendis facere nesciunt id ab. Quasi facere molestias molestias sit dolor et omnis.\",\n            \"email\": \"edwina.ziemann10@yahoo.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:49.126508\",\n            \"updated_at\": \"2024-05-10T15:51:49.126508\"\n        },\n        {\n            \"id\": 974,\n            \"subject\": \"Sports\",\n            \"text\": \"Est dolore rerum ratione eaque quae esse culpa excepturi. Placeat incidunt explicabo et deleniti hic eum. Cum fugiat vel id qui nostrum enim ex. Provident atque aut veniam id aut excepturi adipisci voluptatem. Et ratione nobis qui.\",\n            \"email\": \"demetris.predovic@hotmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:49.147661\",\n            \"updated_at\": \"2024-05-10T15:51:49.147661\"\n        },\n        {\n            \"id\": 975,\n            \"subject\": \"Tools\",\n            \"text\": \"Et qui et quidem beatae. Est quo possimus sit. Illo facere sed inventore minima natus. Libero unde perspiciatis.\",\n            \"email\": \"branson.bogisich@gmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:49.173985\",\n            \"updated_at\": \"2024-05-10T15:51:49.173985\"\n        },\n        {\n            \"id\": 976,\n            \"subject\": \"Clothing\",\n            \"text\": \"Ut ipsum est similique cupiditate ullam voluptate. Laborum voluptatem et praesentium ratione dolore ea. Tempora sed voluptatibus corporis recusandae aut sit ut. Assumenda perferendis maiores id eum unde ducimus delectus. Quasi qui sint totam similique et. Placeat dolore voluptas architecto eum enim esse.\",\n            \"email\": \"hester_waelchi75@gmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:49.179299\",\n            \"updated_at\": \"2024-05-10T15:51:49.179299\"\n        },\n        {\n            \"id\": 977,\n            \"subject\": \"Outdoors\",\n            \"text\": \"Praesentium est quae iste dolorem impedit. Nobis vero fuga. Enim vel autem soluta distinctio quia non libero. Et qui et libero. Id expedita id laudantium molestias rerum ullam veritatis dolorem a. Enim debitis qui maiores.\",\n            \"email\": \"una.schmeler@yahoo.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:49.185835\",\n            \"updated_at\": \"2024-05-10T15:51:49.185835\"\n        },\n        {\n            \"id\": 979,\n            \"subject\": \"Health\",\n            \"text\": \"Amet dolor consequatur et nihil veritatis dolores ad delectus enim. Dolores nihil aut dicta sunt enim et. Tenetur alias nulla id. Sunt nihil occaecati alias. Repellendus quia beatae quisquam.\",\n            \"email\": \"arely.smith15@hotmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:49.198047\",\n            \"updated_at\": \"2024-05-10T15:51:49.198047\"\n        },\n        {\n            \"id\": 978,\n            \"subject\": \"Clothing\",\n            \"text\": \"Omnis nesciunt veniam cumque doloremque. Nisi aut explicabo necessitatibus. Alias soluta sint distinctio sit eligendi ducimus qui qui. Ut ea consequuntur. Dicta quos tempore ipsam culpa omnis aut animi cupiditate. Consectetur id similique nam.\",\n            \"email\": \"nicklaus4@yahoo.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:49.198289\",\n            \"updated_at\": \"2024-05-10T15:51:49.198289\"\n        },\n        {\n            \"id\": 980,\n            \"subject\": \"Automotive\",\n            \"text\": \"Omnis incidunt et et. Sunt maxime ducimus praesentium necessitatibus non. Illo beatae quaerat odio aliquam sunt hic dolores aliquam illo.\",\n            \"email\": \"vallie_daugherty@hotmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:49.200087\",\n            \"updated_at\": \"2024-05-10T15:51:49.200087\"\n        },\n        {\n            \"id\": 981,\n            \"subject\": \"Games\",\n            \"text\": \"Reprehenderit aut ullam sit repellendus sint. Dolores voluptatum natus saepe in expedita praesentium pariatur qui. Et ipsum voluptatem. Aut esse officiis iste ratione fugiat mollitia voluptas. Quos odio doloremque rerum et aut porro vel est consequatur. Modi consequuntur nihil exercitationem corporis voluptas et excepturi perferendis ut.\",\n            \"email\": \"rosalind.murphy@hotmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:49.213042\",\n            \"updated_at\": \"2024-05-10T15:51:49.213042\"\n        },\n        {\n            \"id\": 982,\n            \"subject\": \"Music\",\n            \"text\": \"Neque consequuntur ex. Exercitationem modi doloribus quae veritatis et non temporibus voluptates. Eveniet ut perferendis laborum ut eos dolor fugit. Quo doloribus suscipit quasi et.\",\n            \"email\": \"eladio_sauer48@hotmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:49.220259\",\n            \"updated_at\": \"2024-05-10T15:51:49.220259\"\n        },\n        {\n            \"id\": 983,\n            \"subject\": \"Outdoors\",\n            \"text\": \"Voluptatem eum numquam. Esse qui voluptas dignissimos quisquam nesciunt perspiciatis temporibus hic fugiat. Consectetur voluptas deserunt maiores culpa consequatur dolor.\",\n            \"email\": \"durward.murazik71@hotmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:49.232116\",\n            \"updated_at\": \"2024-05-10T15:51:49.232116\"\n        },\n        {\n            \"id\": 984,\n            \"subject\": \"Outdoors\",\n            \"text\": \"Eveniet doloribus molestias architecto eos et ullam. Odit voluptatem odit ducimus eius neque quibusdam eos sequi. Non atque incidunt. Quasi iusto voluptatibus. Est rem voluptas sunt voluptatibus perspiciatis explicabo ipsum neque.\",\n            \"email\": \"ferne94@hotmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:49.234662\",\n            \"updated_at\": \"2024-05-10T15:51:49.234662\"\n        },\n        {\n            \"id\": 985,\n            \"subject\": \"Music\",\n            \"text\": \"Ipsa numquam est id odit exercitationem voluptatem in explicabo. Eos illum nulla qui qui deleniti laudantium sunt. Qui quibusdam neque sint.\",\n            \"email\": \"tyshawn30@gmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:49.237559\",\n            \"updated_at\": \"2024-05-10T15:51:49.237559\"\n        },\n        {\n            \"id\": 986,\n            \"subject\": \"Music\",\n            \"text\": \"Est quia dicta consequuntur nostrum consequatur rerum nulla sed minus. In dolore et. Voluptatem quia error et aut et id et.\",\n            \"email\": \"violette_schmeler@yahoo.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:49.246493\",\n            \"updated_at\": \"2024-05-10T15:51:49.246493\"\n        },\n        {\n            \"id\": 987,\n            \"subject\": \"Outdoors\",\n            \"text\": \"Quae cumque et et possimus reiciendis. Magni assumenda id laborum ratione. Quisquam dicta sit dignissimos molestias iusto. Commodi autem commodi officia harum a. Dolorem voluptatem nisi alias quidem ea rerum optio. Et dolorem veniam rerum.\",\n            \"email\": \"mona_veum@gmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:49.257880\",\n            \"updated_at\": \"2024-05-10T15:51:49.257880\"\n        },\n        {\n            \"id\": 988,\n            \"subject\": \"Movies\",\n            \"text\": \"Deleniti hic reiciendis. Aut esse quis nobis dignissimos rerum est minus. Sit commodi accusantium. Possimus ipsa eos. Dolor itaque magnam unde corrupti id. Velit sit dolor odit nemo ipsam.\",\n            \"email\": \"okey.ritchie@yahoo.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:49.266894\",\n            \"updated_at\": \"2024-05-10T15:51:49.266894\"\n        },\n        {\n            \"id\": 989,\n            \"subject\": \"Tools\",\n            \"text\": \"Voluptas aliquid quod nobis consequuntur et ducimus. Et minus rerum ut totam odit sed quis quo consequatur. Delectus laudantium sint hic tempora quo voluptatem quisquam fuga. Animi numquam culpa.\",\n            \"email\": \"emilio52@hotmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:49.280120\",\n            \"updated_at\": \"2024-05-10T15:51:49.280120\"\n        },\n        {\n            \"id\": 991,\n            \"subject\": \"Books\",\n            \"text\": \"Exercitationem inventore laborum animi dolor et non. Placeat dolor debitis et dignissimos est et neque voluptatem a. Et id corporis libero reiciendis. Aliquid minus ut tenetur pariatur dignissimos soluta. Autem vel ad totam. Maiores veritatis animi dignissimos consectetur quo aut quisquam corrupti.\",\n            \"email\": \"jacquelyn.volkman@hotmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:49.287883\",\n            \"updated_at\": \"2024-05-10T15:51:49.287883\"\n        },\n        {\n            \"id\": 990,\n            \"subject\": \"Music\",\n            \"text\": \"Tempora qui et sed. Voluptatem doloribus quidem dolorem. Dolore et porro. Repudiandae et eveniet.\",\n            \"email\": \"dorcas_king77@gmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:49.288101\",\n            \"updated_at\": \"2024-05-10T15:51:49.288101\"\n        },\n        {\n            \"id\": 992,\n            \"subject\": \"Jewelery\",\n            \"text\": \"Laboriosam laboriosam optio qui mollitia. Repellat accusamus vel omnis facere ipsum. Exercitationem rerum reprehenderit sit ipsam facilis esse alias quod. Doloribus et et aliquam. Neque natus error quis tempore dolores.\",\n            \"email\": \"shanel_schneider23@hotmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:49.296405\",\n            \"updated_at\": \"2024-05-10T15:51:49.296405\"\n        },\n        {\n            \"id\": 993,\n            \"subject\": \"Health\",\n            \"text\": \"Tenetur doloremque impedit dolorum nemo quod repellendus. Et distinctio optio placeat consequatur. Sed consequatur dignissimos et. Quibusdam soluta perferendis eius iure. Optio recusandae ab sunt voluptas voluptatum animi.\",\n            \"email\": \"gudrun_wiza@gmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:49.315640\",\n            \"updated_at\": \"2024-05-10T15:51:49.315640\"\n        },\n        {\n            \"id\": 994,\n            \"subject\": \"Computers\",\n            \"text\": \"Nihil sunt exercitationem in repellendus et eos iste. Rem ut unde quidem dolorum. Aliquid quos nemo doloremque accusantium maxime. Sed rerum vero et.\",\n            \"email\": \"dahlia.raynor@hotmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:49.321753\",\n            \"updated_at\": \"2024-05-10T15:51:49.321753\"\n        },\n        {\n            \"id\": 995,\n            \"subject\": \"Garden\",\n            \"text\": \"Velit culpa eaque officiis qui excepturi. Sunt sapiente dignissimos architecto. Nemo qui voluptatem et sed magnam impedit corrupti ipsa. Amet quae delectus sunt corrupti. Omnis deleniti quibusdam distinctio soluta doloribus voluptatem. Quia dolore id necessitatibus soluta id.\",\n            \"email\": \"devante.jenkins@yahoo.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:49.330583\",\n            \"updated_at\": \"2024-05-10T15:51:49.330583\"\n        },\n        {\n            \"id\": 996,\n            \"subject\": \"Music\",\n            \"text\": \"Culpa sed possimus dolor cumque. Molestiae illum officia. Facilis vel corporis eaque. Quos sapiente eum mollitia praesentium laudantium. Porro omnis culpa voluptatem.\",\n            \"email\": \"shana_little60@yahoo.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:49.331023\",\n            \"updated_at\": \"2024-05-10T15:51:49.331023\"\n        },\n        {\n            \"id\": 997,\n            \"subject\": \"Industrial\",\n            \"text\": \"Veniam recusandae ut nihil neque sit quibusdam. Cupiditate quisquam ut dicta fugit qui nemo nulla nobis voluptatem. Non neque voluptatem.\",\n            \"email\": \"tito_walsh@gmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:49.331535\",\n            \"updated_at\": \"2024-05-10T15:51:49.331535\"\n        },\n        {\n            \"id\": 998,\n            \"subject\": \"Garden\",\n            \"text\": \"Vero qui vel labore qui. Eos sunt fuga. Nesciunt omnis rem enim et non ducimus blanditiis autem perferendis. Ea in rerum libero ex. Aliquid cupiditate ea vitae aut molestiae sint aspernatur.\",\n            \"email\": \"josephine.jacobson64@hotmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:49.333606\",\n            \"updated_at\": \"2024-05-10T15:51:49.333606\"\n        },\n        {\n            \"id\": 1000,\n            \"subject\": \"Garden\",\n            \"text\": \"Autem non et praesentium sunt. Laborum molestias autem fuga. Voluptatem occaecati quo illum dolores maxime quia rerum tempora temporibus.\",\n            \"email\": \"kim_mayer@hotmail.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:49.356482\",\n            \"updated_at\": \"2024-05-10T15:51:49.356482\"\n        },\n        {\n            \"id\": 999,\n            \"subject\": \"Tools\",\n            \"text\": \"Facere ad incidunt excepturi quibusdam. Id assumenda dolorem corrupti tenetur aut id et. Assumenda id eaque consequatur sunt earum mollitia. Ea adipisci corporis porro occaecati cum vel.\",\n            \"email\": \"garrett19@yahoo.com\",\n            \"status\": \"open\",\n            \"created_at\": \"2024-05-10T15:51:49.356726\",\n            \"updated_at\": \"2024-05-10T15:51:49.356726\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "400 - page",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/tickets/?page=0&page_size=100",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"tickets",
+								""
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "page_size",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"status": "BAD REQUEST",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.0.3 Python/3.12.3"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 11 May 2024 08:21:26 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "94"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Validation error\",\n    \"details\": {\n        \"page\": \"Input should be greater than or equal to 1\"\n    }\n}"
+				},
+				{
+					"name": "400 - page_size",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/tickets/?page=1&page_size=0",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"tickets",
+								""
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "page_size",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"status": "BAD REQUEST",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.0.3 Python/3.12.3"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 11 May 2024 08:22:04 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "99"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Validation error\",\n    \"details\": {\n        \"page_size\": \"Input should be greater than or equal to 1\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "New ticket",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});",
+							"",
+							"pm.test(\"Validate values\", function () {",
+							"    var responseData = pm.response.json();",
+							"    pm.expect(responseData.subject).to.be.a(\"string\");",
+							"    pm.expect(responseData.text).to.be.a(\"string\");",
+							"    pm.expect(responseData.email).to.be.a(\"string\");",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"subject\": \"{{$randomDepartment}}\",\n    \"text\": \"{{$randomLoremParagraph}}\",\n    \"email\": \"{{$randomEmail}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/tickets/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"tickets",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New ticket 201",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"subject\": \"{{$randomDepartment}}\",\n    \"text\": \"{{$randomLoremParagraph}}\",\n    \"email\": \"{{$randomEmail}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/tickets/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"tickets",
+								""
+							]
+						}
+					},
+					"status": "CREATED",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "439"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 7372,\n    \"subject\": \"Toys\",\n    \"text\": \"Consequatur ratione non repudiandae perferendis eaque saepe. Dolor sit quas molestias aut. Mollitia placeat qui consequatur deserunt sed voluptate deleniti beatae molestias. Dolores sapiente consequatur. Cum distinctio autem aperiam voluptatem sit aut.\",\n    \"email\": \"jacklyn.kuhn34@gmail.com\",\n    \"status\": \"open\",\n    \"created_at\": \"2024-05-12T14:11:05.523724\",\n    \"updated_at\": \"2024-05-12T14:11:05.523724\",\n    \"comments\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "Get ticket by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/tickets/3/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"tickets",
+						"3",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get ticket by id 200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/tickets/3/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"tickets",
+								"3",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2650"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 3,\n    \"subject\": \"Baby\",\n    \"text\": \"Ut sed fugiat voluptate. Atque id dolore incidunt quam officia tempore explicabo quis ut. Mollitia facilis modi maiores vitae aut nemo molestiae dolore ea.\",\n    \"email\": \"merlin_luettgen94@gmail.com\",\n    \"status\": \"closed\",\n    \"created_at\": \"2024-05-12T08:09:18.226093\",\n    \"updated_at\": \"2024-05-12T14:08:59.838698\",\n    \"comments\": [\n        {\n            \"id\": 5,\n            \"ticket_id\": 3,\n            \"text\": \"Ut accusantium veritatis quisquam ducimus voluptate. Rerum est suscipit voluptas ea ad aut. Natus minima ut hic perferendis eos in sit voluptate nostrum. Quos molestiae delectus vel ex eveniet beatae maiores doloribus esse. Consequatur alias explicabo corporis vero similique fugiat aut voluptatum.\",\n            \"email\": \"karina.purdy4@gmail.com\",\n            \"created_at\": \"2024-05-12T14:05:26.817005\"\n        },\n        {\n            \"id\": 6,\n            \"ticket_id\": 3,\n            \"text\": \"Hic assumenda sed rerum architecto rerum facere animi cupiditate quia. Quis sit sed at voluptates. Nulla qui ipsam voluptas sit. Voluptatum placeat ullam aut rerum voluptates ex corporis. Dignissimos nulla minima ipsum tempore voluptatem animi vel.\",\n            \"email\": \"kian.sipes28@hotmail.com\",\n            \"created_at\": \"2024-05-12T14:05:27.611477\"\n        },\n        {\n            \"id\": 7,\n            \"ticket_id\": 3,\n            \"text\": \"Eum vel sed adipisci quis eos provident hic reprehenderit laboriosam. Officiis eius eum qui in natus non. Sit aut asperiores quaerat. Pariatur quisquam id explicabo sit expedita doloremque cumque. Animi laboriosam est aut est sequi omnis. Placeat et aut.\",\n            \"email\": \"shawna40@yahoo.com\",\n            \"created_at\": \"2024-05-12T14:05:28.017629\"\n        },\n        {\n            \"id\": 8,\n            \"ticket_id\": 3,\n            \"text\": \"Eum ratione nam eum. Et sed nulla. Aliquid dolorem magnam.\",\n            \"email\": \"tyshawn65@yahoo.com\",\n            \"created_at\": \"2024-05-12T14:05:28.422719\"\n        },\n        {\n            \"id\": 9,\n            \"ticket_id\": 3,\n            \"text\": \"Dolore minus saepe quod consequatur non autem sed voluptatem ipsum. Ea deserunt alias delectus. Aliquam ut repellat aspernatur veritatis nihil libero. Repudiandae voluptatem ducimus minus atque corporis corporis et quisquam consequatur. Et dolorem autem nulla harum ut animi.\",\n            \"email\": \"jovani93@yahoo.com\",\n            \"created_at\": \"2024-05-12T14:05:28.913673\"\n        },\n        {\n            \"id\": 10,\n            \"ticket_id\": 3,\n            \"text\": \"Beatae sint illo blanditiis aliquid exercitationem. Perferendis voluptatem nesciunt quia. Quis corrupti soluta.\",\n            \"email\": \"yesenia.klein67@gmail.com\",\n            \"created_at\": \"2024-05-12T14:05:29.216859\"\n        },\n        {\n            \"id\": 11,\n            \"ticket_id\": 3,\n            \"text\": \"Et tenetur nam et rem consequatur explicabo. Voluptas cum eum. Rerum odit beatae. Voluptatem accusantium molestias illo suscipit in. Ullam corrupti architecto voluptatum. Fugit blanditiis quam delectus.\",\n            \"email\": \"norbert45@hotmail.com\",\n            \"created_at\": \"2024-05-12T14:05:29.570347\"\n        },\n        {\n            \"id\": 12,\n            \"ticket_id\": 3,\n            \"text\": \"string\",\n            \"email\": \"user@example.com\",\n            \"created_at\": \"2024-05-12T14:08:26.461157\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Update ticket",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"status\": \"closed\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/tickets/2/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"tickets",
+						"2",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update ticket 400",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\": \"closed\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/tickets/2/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"tickets",
+								"2",
+								""
+							]
+						}
+					},
+					"status": "BAD REQUEST",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "45"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Ticket is closed\",\n    \"details\": null\n}"
+				},
+				{
+					"name": "Update ticket 200",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\": \"closed\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/tickets/4/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"tickets",
+								"4",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "463"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 4,\n    \"subject\": \"Movies\",\n    \"text\": \"Et atque perferendis. Suscipit quia dolores aut libero ab quaerat repellendus. Veritatis velit tempora est numquam in qui doloribus eum. Aliquid voluptas ratione possimus. Minus voluptatem est maiores distinctio consequatur voluptate. Deleniti voluptas at necessitatibus omnis.\",\n    \"email\": \"selmer_mante@yahoo.com\",\n    \"status\": \"closed\",\n    \"created_at\": \"2024-05-12T08:09:32.611001\",\n    \"updated_at\": \"2024-05-12T14:11:39.530102\",\n    \"comments\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "Add comment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"text\": \"{{$randomLoremParagraph}}\",\n    \"email\": \"{{$randomEmail}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/tickets/3/comments/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"tickets",
+						"3",
+						"comments",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add comment 400",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"text\": \"{{$randomLoremParagraph}}\",\n    \"email\": \"{{$randomEmail}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/tickets/3/comments/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"tickets",
+								"3",
+								"comments",
+								""
+							]
+						}
+					},
+					"status": "BAD REQUEST",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "45"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Ticket is closed\",\n    \"details\": null\n}"
+				},
+				{
+					"name": "Add comment 201",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"text\": \"{{$randomLoremParagraph}}\",\n    \"email\": \"{{$randomEmail}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/tickets/5/comments/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"tickets",
+								"5",
+								"comments",
+								""
+							]
+						}
+					},
+					"status": "CREATED",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "311"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 13,\n    \"ticket_id\": 5,\n    \"text\": \"Vero cupiditate et eum ipsa ex voluptatibus enim possimus et. Ut nemo quos voluptatem dolorem aut sint laborum natus iste. Aperiam et fuga quasi architecto aut in enim in. Saepe quia enim tempore.\",\n    \"email\": \"earnestine.raynor19@gmail.com\",\n    \"created_at\": \"2024-05-12T14:11:53.334533\"\n}"
+				}
+			]
+		}
+	]
+}
