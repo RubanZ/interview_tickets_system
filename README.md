@@ -58,6 +58,27 @@ docker-compose --env-file .env up -d --build
 
 ### Коллекция Postman - [Tickets.postman_collection.json](Tickets.postman_collection.json)
 
+## Заполнение базы данных
+
+Мое предложение - использовать Postman Runner для заполнения базы данных.
+
+Пример тела запроса для создания тикета:
+```json
+{
+    "subject": "{{$randomDepartment}}",
+    "text": "{{$randomLoremParagraph}}",
+    "email": "{{$randomEmail}}"
+}
+```
+
+Пример тела запроса для создания комментария:
+```json
+{
+    "text": "{{$randomLoremParagraph}}",
+    "email": "{{$randomEmail}}"
+}
+```
+
 
 ## Запуск тестов
 
