@@ -384,13 +384,13 @@
 					}
 				},
 				"url": {
-					"raw": "{{url}}/tickets/2/",
+					"raw": "{{url}}/tickets/4/",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
 						"tickets",
-						"2",
+						"4",
 						""
 					]
 				}
@@ -511,7 +511,7 @@
 			},
 			"response": [
 				{
-					"name": "Add comment 400",
+					"name": "Add comment",
 					"originalRequest": {
 						"method": "POST",
 						"header": [],
@@ -525,13 +525,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/tickets/3/comments/",
+							"raw": "{{url}}/tickets/5/comments/",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"tickets",
-								"3",
+								"5",
 								"comments",
 								""
 							]
