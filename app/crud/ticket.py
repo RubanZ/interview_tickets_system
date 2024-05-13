@@ -41,7 +41,7 @@ class TicketCRUD:
             page_items = (
                 session.query(Ticket)
                 .options(joinedload(Ticket.comments))
-                .order_by(sort_logic, Ticket.created_at.asc())
+                .order_by(sort_logic, Ticket.updated_at.asc())
                 .limit(per_page)
                 .offset((page - 1) * per_page)
             )
@@ -94,7 +94,6 @@ class TicketCRUD:
         with Session(db.engine) as session:
             ticket = (
                 session.query(Ticket)
-                .options(joinedload(Ticket.comments))
                 .with_for_update()
                 .get(ticket_id)
             )
