@@ -34,7 +34,7 @@ class TicketCRUD:
             total = session.query(Ticket).count()
 
             sort_logic = case(
-                {"open": 0, "waiting_for_answer": 1, "answered": 2, "closed": 3},
+                {"open": 1, "waiting_for_answer": 0, "answered": 2, "closed": 3},
                 value=Ticket.status,
             ).label("status")
 
